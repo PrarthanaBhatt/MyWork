@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".layout.MyRelative.MyRelativeLayoutActivity">
+
+<TextView
+    android:id="@+id/skipTxt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="12dp"
+    android:text="@string/skip" />
+
+<ImageView
+    android:id="@+id/img1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:adjustViewBounds="true"
+    android:layout_below="@+id/skipTxt"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentRight="true"
+    android:layout_centerHorizontal="true"
+    android:layout_gravity="center"
+    android:layout_marginStart="30dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="0dp"
+    android:layout_marginEnd="31dp"
+    android:layout_marginRight="31dp"
+    android:src="@drawable/one" />
+
+<TextView
+    android:id="@+id/takeCareTxt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/img1"
+    android:layout_centerHorizontal="true"
+    android:layout_marginStart="40dp"
+    android:layout_marginLeft="40dp"
+    android:layout_marginTop="-1dp"
+    android:text="@string/take_care"
+    android:textColor="@color/black"
+    android:textSize="60sp"
+    android:textStyle="bold" />
+
+<TextView
+    android:id="@+id/healthTxt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/takeCareTxt"
+    android:layout_centerHorizontal="true"
+    android:layout_marginStart="40dp"
+    android:layout_marginLeft="40dp"
+    android:layout_marginTop="-1dp"
+    android:text="@string/of_your_health"
+    android:textColor="@color/black"
+    android:textSize="40sp"
+    android:textStyle="bold" />
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/border"
+    android:layout_below="@id/healthTxt"
+    android:layout_marginStart="95dp"
+    android:layout_marginLeft="55dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp">
+
+    <TextView
+        android:id="@+id/gettxt"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/get_started"
+        android:textColor="@color/black2" />
+
+
+    <Button
+        android:id="@+id/arrow"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:background="@drawable/custom_button"
+        android:drawableRight="@drawable/ic_input_arrow_forward_24"
+        android:textAllCaps="false"
+        android:textSize="12dp"
+        app:backgroundTint="@null"
+        android:layout_marginStart="20dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="20dp" />
+</LinearLayout>
+
+
+
+</RelativeLayout>

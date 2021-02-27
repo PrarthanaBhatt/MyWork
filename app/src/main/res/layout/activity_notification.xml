@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".components.notification.NotificationActivity">
+
+<com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/textInputLayoutOne"
+    android:layout_width="match_parent"
+    android:layout_marginTop="25dp"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
+    android:layout_marginLeft="25dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintVertical_bias="0.083"
+    android:defaultFocusHighlightEnabled="true">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/title"
+        android:background="@color/design_default_color_on_primary"
+        android:inputType="textAutoComplete"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+</com.google.android.material.textfield.TextInputLayout>
+
+<com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/textInputLayoutTwo"
+    android:layout_below="@+id/textInputLayoutOne"
+    android:layout_width="match_parent"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
+    android:layout_marginLeft="25dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintVertical_bias="0.083"
+    android:defaultFocusHighlightEnabled="true">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/message"
+        android:background="@color/design_default_color_on_primary"
+        android:inputType="textAutoComplete"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+</com.google.android.material.textfield.TextInputLayout>
+
+<Button
+    android:id="@+id/oneBtn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/textInputLayoutTwo"
+    android:layout_marginTop="25dp"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
+    android:layout_marginLeft="25dp"
+    android:text="@string/send_on_channel_one"
+    android:textAllCaps="false"
+    android:onClick="sendOnChannel1"/>
+
+<Button
+    android:id="@+id/twoBtn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textInputLayoutTwo"
+    android:layout_marginTop="80dp"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
+    android:layout_marginLeft="25dp"
+    android:text="@string/send_on_channel_two"
+    android:textAllCaps="false"
+    android:onClick="sendOnChannel2"/>
+
+
+</RelativeLayout>

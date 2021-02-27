@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.prarthana.myworkapplication.R;
 
@@ -56,6 +57,7 @@ public class FragmentLifecycle extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         Log.i("FragmentOne","-----** attach fragment **----");
+        Toast.makeText(getContext(), "Fragment attach", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -63,6 +65,7 @@ public class FragmentLifecycle extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i("FragmentOne","-----** create fragment **----");
+        Toast.makeText(getContext(), "Fragment create", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -71,6 +74,7 @@ public class FragmentLifecycle extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         Log.i("Fragment","----** create view **----");
+        Toast.makeText(getContext(), "Fragment create view", Toast.LENGTH_SHORT).show();
         return inflater.inflate(R.layout.fragment_lifecycle, container, false);
     }
 
@@ -78,36 +82,43 @@ public class FragmentLifecycle extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Log.i("FragmentOne","----** activity created **----");
+        Toast.makeText(getContext(), "Fragment activity created", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onStart() {
         super.onStart();
         Log.i("FragmentOne","----** start **----");
+        Toast.makeText(getContext(), "Fragment started", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onResume() {
         super.onResume();
         Log.i("FragmentOne","----** resume **----");
+        Toast.makeText(getContext(), "Fragment resume", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onPause() {
         super.onPause();
         Log.i("FragmentOne","----** pause **----");
+
+        Toast.makeText(getContext(), "Fragment pause", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onStop() {
         super.onStop();
         Log.i("FragmentOne","----** stop **----");
+        Toast.makeText(getContext(), "Fragment stop", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         Log.i("FragmentOne","----** destroy view **----");
+        Toast.makeText(getContext(), "Fragment destroy", Toast.LENGTH_SHORT).show();
     }
 
     @Override

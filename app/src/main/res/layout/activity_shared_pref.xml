@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+tools:context=".data_persistence.shared_pref.SharedPrefActivity"
+android:layout_marginTop="190dp">
+<com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/textInputLayoutOne"
+    android:layout_width="match_parent"
+    android:layout_marginTop="2dp"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
+    android:layout_marginLeft="25dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintVertical_bias="0.083"
+    android:defaultFocusHighlightEnabled="true">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/lgEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_baseline_person_outline_24"
+        android:hint=" Email"
+        android:background="@color/design_default_color_on_primary"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:drawableLeft="@drawable/ic_baseline_email_24" />
+</com.google.android.material.textfield.TextInputLayout>
+
+
+<com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/textInputLayoutTwo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textInputLayoutOne"
+    android:layout_marginTop="4dp"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
+    android:layout_marginLeft="25dp"
+    app:layout_constraintVertical_bias="0.083"
+    app:passwordToggleEnabled="true"
+    app:passwordToggleTint="#424242">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/lgPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_baseline_lock_open_24"
+        android:hint=" Password"
+        android:background="@color/design_default_color_on_primary"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="14sp"
+        android:drawableLeft="@drawable/ic_baseline_lock_open_24" />
+</com.google.android.material.textfield.TextInputLayout>
+
+<Button
+    android:id="@+id/btnLogin"
+    android:layout_below="@+id/textInputLayoutTwo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
+    android:layout_gravity="center"
+    android:text="Login"
+    android:textAllCaps="false"
+    android:textColor="@color/white"
+    android:textSize="14sp"
+    app:layout_constraintVertical_bias="0.071" />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLogin"
+        android:layout_gravity="center"
+        android:text="Remember me" />
+</LinearLayout>
