@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.prarthana.myworkapplication.R;
 import com.prarthana.myworkapplication.data_persistence.shared_pref.SharedPrefActivity;
+import com.prarthana.myworkapplication.data_persistence.sql_data.SqlMainActivity;
 
 public class DataPersistenceMainActivity extends AppCompatActivity {
 
@@ -24,7 +25,8 @@ public class DataPersistenceMainActivity extends AppCompatActivity {
     }
 
     public void callSQLite(View view) {
-        Toast.makeText(this, "SQL", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(DataPersistenceMainActivity.this, SqlMainActivity.class);
+        startActivity(intent);
     }
 
     public void callInternal(View view) {
