@@ -20,6 +20,7 @@ public class LifecycleMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lifecycle_main);
         Log.i("MainActivity","Create Activity.....");
+        Toast.makeText(this, "Activity Created...", Toast.LENGTH_SHORT).show();
 
         //lambda funtion to onclicklistener
         findViewById(R.id.btn).setOnClickListener(view -> Toast.makeText(this, "Button clicked", Toast.LENGTH_LONG).show());
@@ -28,6 +29,7 @@ public class LifecycleMainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Log.i("MainActivity","Start Activity.....");
+        Toast.makeText(this, "Activity started...", Toast.LENGTH_SHORT).show();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -51,30 +53,35 @@ public class LifecycleMainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.i("MainActivity","Resume Activity.....");
+        Toast.makeText(this, "Activity Resume...", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         Log.i("MainActivity","Restart Activity.....");
+        Toast.makeText(this, "Activity Restart...", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         Log.i("MainActivity","Pause Activity.....");
+        Toast.makeText(this, "Activity Pause...", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         Log.i("MainActivity","Stop Activity.....");
+        Toast.makeText(this, "Activity Stop...", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.i("MainActivity","Destroy Activity.....");
+        Toast.makeText(this, "Activity Destroy...", Toast.LENGTH_SHORT).show();
     }
 
 }

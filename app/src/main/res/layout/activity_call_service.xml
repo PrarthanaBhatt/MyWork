@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".components.service_one.CallServiceActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/example_of_services"
+        android:layout_marginTop="290dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/service_call_on_start_button"
+        android:textColor="#ff87ff09"
+        android:textSize="30sp"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp" />
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/StartBtn"
+        android:text="@string/start_services"
+        android:onClick="startService"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop_services"
+        android:id="@+id/StopButton"
+        android:onClick="stopService"
+        android:layout_below="@+id/StartBtn"
+        android:layout_alignLeft="@+id/StartBtn"
+        android:layout_alignStart="@+id/StartBtn"
+        android:layout_alignRight="@+id/StartBtn"
+        android:layout_alignEnd="@+id/StartBtn" />
+
+</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
