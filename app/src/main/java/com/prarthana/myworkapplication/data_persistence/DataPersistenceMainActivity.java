@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.prarthana.myworkapplication.R;
+import com.prarthana.myworkapplication.data_persistence.internal_storage.InternalStorageMainActivity;
 import com.prarthana.myworkapplication.data_persistence.shared_pref.SharedPrefActivity;
 import com.prarthana.myworkapplication.data_persistence.sql_data.SqlMainActivity;
 
@@ -30,6 +31,7 @@ public class DataPersistenceMainActivity extends AppCompatActivity {
     }
 
     public void callInternal(View view) {
-        Toast.makeText(this, "Internal", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(DataPersistenceMainActivity.this, InternalStorageMainActivity.class);
+        startActivity(intent);
     }
 }
