@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">MyWorkApplication</string>
+    <string name="layouts">Layouts</string>
+    <string name="components">Components</string>
+    <string name="data_persistence">Data Persistence</string>
+    <string name="activity_lifecycle">Activity LifeCycle</string>
+    <string name="click" />
+    <string name="Strclick">Click</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="los_angeles">Los Angeles,</string>
+    <string name="ca">CA</string>
+    <string name="search_doctor">Search Doctor...</string>
+    <string name="catalog">Catalog</string>
+    <string name="specialist">Specialist!</string>
+    <string name="you_can_easily_and_quickly_find_the_doctor_you_need">You can easily and quickly find the doctor you need</string>
+    <string name="top_doctors">Top doctors</string>
+    <string name="henry_miller">Henry Miller</string>
+    <string name="psychiatrist">Psychiatrist</string>
+    <string name="appointment">Appointment</string>
+    <string name="elizabeth_taylor">Elizabeth Taylor</string>
+    <string name="cardiologist">Cardiologist</string>
+    <string name="linear_layout">Linear Layout</string>
+    <string name="relative_layout">Relative Layout</string>
+    <string name="constraint_layout">Constraint Layout</string>
+    <string name="skip">Skip</string>
+    <string name="take_care">Take care</string>
+    <string name="of_your_health">of your health</string>
+    <string name="get_started">Get Started</string>
+    <string name="location">Location</string>
+    <string name="notification">Notification</string>
+    <string name="service">Service</string>
+    <string name="content_providers">Content Providers</string>
+    <string name="call">Call</string>
+    <string name="select_image">Select Image</string>
+    <string name="title">Title</string>
+    <string name="message">Message</string>
+    <string name="send_on_channel_one">Send Message on Channel one</string>
+    <string name="send_on_channel_two">Send on channel two</string>
+    <string name="example_of_services">Example of Services</string>
+    <string name="service_call_on_start_button">Service call on start buton</string>
+    <string name="start_services">String SErvices</string>
+    <string name="stop_services">Stop Services</string>
+
+    <string name="shared_preference">Shared Preference</string>
+    <string name="sqlite">SQLite</string>
+    <string name="internal_storage">Internal Storage</string>
+    <string name="forgot_password">Forget Password</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account ? Register Now</string>
+
+    <string name="contact_book">Contact Book</string>
+    <string name="enter_name_here">Enter Name here</string>
+    <string name="enter_contact_no">Enter Contact No.</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="add_to_sqlite">Add to SQLite</string>
+    <string name="user_email">User Email</string>
+    <string name="user_mobile">User Mobile</string>
+    <string name="user_name">User Name</string>
+    <string name="address">Address</string>
+    <string name="enter_address">Enter Address</string>
+
+</resources>

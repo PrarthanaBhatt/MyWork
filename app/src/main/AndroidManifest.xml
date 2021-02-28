@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.prarthana.myworkapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyWorkApplication">
+        <activity android:name=".data_persistence.sql_data.FetchActivity"></activity>
+        <activity android:name=".data_persistence.sql_data.SqlMainActivity" />
+        <activity android:name=".data_persistence.shared_pref.SharedPrefActivity" />
+        <activity android:name=".components.service_one.CallServiceActivity" />
+        <activity android:name=".components.contentprovider_one.ChooseImageActivity" />
+        <activity android:name=".components.notification.NotificationActivity" />
+        <activity android:name=".layout.layout_dashboard.DashboardLayoutActivity" />
+        <activity android:name=".layout.MyConstraint.MyConstraintLayoutActivity" />
+        <activity android:name=".layout.MyRelative.MyRelativeLayoutActivity" />
+        <activity android:name=".layout.MyLinear.MyLinearLayoutActivity" />
+        <activity android:name=".data_persistence.DataPersistenceMainActivity" />
+        <activity android:name=".activity_lifecycle.LifecycleMainActivity" />
+        <activity android:name=".components.ComponentsMainActivity" />
+        <activity android:name=".layout.LayoutMainActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".components.notification.NotificationReceiver" />
+
+        <service android:name=".components.service_one.MyService2" />
+    </application>
+
+</manifest>
