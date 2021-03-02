@@ -43,4 +43,16 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //retrofit dependency
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    //gson converter dependency
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
+
+
+    //glide dependency
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }
