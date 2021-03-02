@@ -2,11 +2,13 @@ package com.prarthana.myworkapplication.api_calls;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import com.prarthana.myworkapplication.R;
+import com.prarthana.myworkapplication.api_calls.retrofit_call.RetrofitMainActivity;
 
 public class ApiCallMainActivity extends AppCompatActivity {
 
@@ -18,5 +20,7 @@ public class ApiCallMainActivity extends AppCompatActivity {
 
     public void callRetrofit(View view) {
         Toast.makeText(this, "retrofit call..", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(ApiCallMainActivity.this, RetrofitMainActivity.class);
+        startActivity(intent);
     }
 }
