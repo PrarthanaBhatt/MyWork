@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWorkApplication">
-        <activity android:name=".data_persistence.internal_storage.InternalStorageMainActivity"></activity>
+        <activity android:name=".data_Activity.DataMainActivity"></activity>
+        <activity android:name=".api_calls.ApiCallMainActivity" />
+        <activity android:name=".data_persistence.internal_storage.InternalStorageMainActivity" />
         <activity android:name=".data_persistence.sql_data.FetchActivity" />
         <activity android:name=".data_persistence.sql_data.SqlMainActivity" />
         <activity android:name=".data_persistence.shared_pref.SharedPrefActivity" />

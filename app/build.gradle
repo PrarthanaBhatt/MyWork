@@ -1,8 +1,11 @@
 plugins {
     id 'com.android.application'
 }
-
 android {
+    buildFeatures {
+        dataBinding true
+    }
+
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
@@ -22,10 +25,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+
 }
 
 dependencies {
