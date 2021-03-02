@@ -59,5 +59,10 @@
     <string name="user_name">User Name</string>
     <string name="address">Address</string>
     <string name="enter_address">Enter Address</string>
+    <string name="databinding">Data Binding</string>
+    <string name="databinding_in_activity">DataBinding In Activity</string>
+    <string name="databinding_in_fragment">DataBinding in Fragment</string>
+    <string name="api_call">API Call</string>
+    <string name="data_binding">Data Binding</string>
 
 </resources>
