@@ -74,4 +74,15 @@
         android:textAllCaps="false"
         android:onClick="callSix"/>
 
+    <Button
+        android:id="@+id/btnSeven"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:backgroundTint="@null"
+        android:background="@drawable/green_button_bg"
+        android:text="@string/architecture"
+        android:textAllCaps="false"
+        android:onClick="callSeven"/>
+
 </LinearLayout>

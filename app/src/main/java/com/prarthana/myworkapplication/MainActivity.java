@@ -10,10 +10,12 @@ import android.widget.Toast;
 
 import com.prarthana.myworkapplication.activity_lifecycle.LifecycleMainActivity;
 import com.prarthana.myworkapplication.api_calls.ApiCallMainActivity;
+import com.prarthana.myworkapplication.architecture.ArchitectureMainActivity;
 import com.prarthana.myworkapplication.components.ComponentsMainActivity;
 import com.prarthana.myworkapplication.data_Activity.DataMainActivity;
 import com.prarthana.myworkapplication.data_persistence.DataPersistenceMainActivity;
 import com.prarthana.myworkapplication.layout.LayoutMainActivity;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -54,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void callFive(View view) {
         Intent intent = new Intent(MainActivity.this, DataMainActivity.class);
+        startActivity(intent);
+    }
+
+    public void callSeven(View view) {
+        Intent intent = new Intent(MainActivity.this, ArchitectureMainActivity.class);
         startActivity(intent);
     }
 }

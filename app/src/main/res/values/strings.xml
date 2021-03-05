@@ -64,5 +64,9 @@
     <string name="databinding_in_fragment">DataBinding in Fragment</string>
     <string name="api_call">API Call</string>
     <string name="data_binding">Data Binding</string>
+    <string name="mvc_architecture">MVC Architecture</string>
+    <string name="mvp_architecture">MVP Architecture</string>
+    <string name="mvvm_architecture">MVVM Architecture</string>
+    <string name="architecture">Architecture</string>
 
 </resources>
