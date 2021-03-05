@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.prarthana.myworkapplication">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWorkApplication">
-        <activity android:name=".api_calls.retrofit_call.RetrofitMainActivity"></activity>
+        <activity android:name=".api_calls.HttpUrlConnection_call.HttpUrlConnectionMainActivity"></activity>
+        <activity android:name=".api_calls.okhttp_call.OkHttpMainActivity" />
+        <activity android:name=".architecture.mvc_architecture.MvcMainActivity" />
+        <activity android:name=".architecture.mvp_architecture.MvpMainActivity" />
+        <activity android:name=".architecture.mvvm_architecture.MvvmMainActivity" />
+        <activity android:name=".architecture.ArchitectureMainActivity" />
+        <activity android:name=".mvp_architecture.MvpMainActivity" />
+        <activity android:name=".api_calls.volley_call.VolleyMainActivity" />
+        <activity android:name=".api_calls.retrofit_call.RetrofitMainActivity" />
         <activity android:name=".data_Activity.DataMainActivity" />
         <activity android:name=".api_calls.ApiCallMainActivity" />
         <activity android:name=".data_persistence.internal_storage.InternalStorageMainActivity" />
@@ -41,5 +47,7 @@
 
         <service android:name=".components.service_one.MyService2" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

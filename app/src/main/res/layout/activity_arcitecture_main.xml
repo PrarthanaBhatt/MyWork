@@ -4,32 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".api_calls.ApiCallMainActivity"
+    android:layout_margin="35dp"
     android:orientation="vertical"
-    android:layout_margin="35dp">
+    tools:context=".architecture.ArchitectureMainActivity">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="HttpUrlConnection"
-        android:onClick="callHttpUrl"/>
+        android:text="@string/mvc_architecture"
+        android:textAllCaps="false"
+        android:onClick="callMVC"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OkHttp"
-        android:onClick="callOkHttp"/>
-
-    <Button
-        android:id="@+id/btnRetrofit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Retrofit"
-        android:onClick="callRetrofit"/>
+        android:text="@string/mvp_architecture"
+        android:textAllCaps="false"
+        android:onClick="callMVP"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Volley"
-        android:onClick="callVolley"/>
+        android:text="@string/mvvm_architecture"
+        android:textAllCaps="false"
+        android:onClick="callMVVM"/>
 </LinearLayout>
