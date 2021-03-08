@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWorkApplication">
-        <activity android:name=".api_calls.HttpUrlConnection_call.HttpUrlConnectionMainActivity"></activity>
+        <activity android:name=".movie_db.MovieMainActivity"></activity>
+        <activity android:name=".room_orm.RoomOrmMainActivity" />
+        <activity android:name=".data_binding_recycler.DataBindingRecyclerMainActivity" />
+        <activity android:name=".api_calls.HttpUrlConnection_call.HttpUrlConnectionMainActivity" />
         <activity android:name=".api_calls.okhttp_call.OkHttpMainActivity" />
         <activity android:name=".architecture.mvc_architecture.MvcMainActivity" />
         <activity android:name=".architecture.mvp_architecture.MvpMainActivity" />
         <activity android:name=".architecture.mvvm_architecture.MvvmMainActivity" />
         <activity android:name=".architecture.ArchitectureMainActivity" />
-        <activity android:name=".mvp_architecture.MvpMainActivity" />
         <activity android:name=".api_calls.volley_call.VolleyMainActivity" />
         <activity android:name=".api_calls.retrofit_call.RetrofitMainActivity" />
         <activity android:name=".data_Activity.DataMainActivity" />

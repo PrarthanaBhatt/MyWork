@@ -68,5 +68,9 @@
     <string name="mvp_architecture">MVP Architecture</string>
     <string name="mvvm_architecture">MVVM Architecture</string>
     <string name="architecture">Architecture</string>
+    <string name="retrofit_recycle_viewbinding">Retrofit + Recycle ViewBinding</string>
+    <string name="room">Room_ORM</string>
+    <string name="add">Add</string>
+    <string name="reset">Reset</string>
 
 </resources>
