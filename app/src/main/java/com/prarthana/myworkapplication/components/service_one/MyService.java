@@ -30,6 +30,7 @@ public class MyService extends Service {
 
     /** A client is binding to the service with bindService() */
     @Override
+
     public IBinder onBind(Intent intent) {
         return mBinder;
     }
@@ -52,3 +53,4 @@ public class MyService extends Service {
 
     }
 }
+
