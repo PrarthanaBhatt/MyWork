@@ -19,7 +19,9 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import com.prarthana.myworkapplication.R;
 import com.prarthana.myworkapplication.api_calls.retrofit_call.RetrofitAdapter;
 
@@ -27,6 +29,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +37,7 @@ public class VolleyMainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ArrayList<ModelVolley> dataArrayList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,13 +59,23 @@ public class VolleyMainActivity extends AppCompatActivity {
             public void onResponse(String response) {
                     if(response != null){
                         dialog.dismiss();
-                        try {
-                            JSONArray jsonArray =  new JSONArray(response);
-                            parseArray(jsonArray);
-                            
-                        }catch (JSONException e){
-                            e.printStackTrace();
-                        }
+                        //TODO: change by using gson
+
+                        Gson gson = new Gson();
+                        ArrayList<ModelVolley> modelVolley = gson.fromJson(response,  new TypeToken<ArrayList<ModelVolley>>(){}.getType());
+                        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(),RecyclerView.VERTICAL,false));
+                        VolleyAdapter volleyAdapter = new VolleyAdapter(VolleyMainActivity.this,modelVolley);
+
+                        recyclerView.setAdapter(volleyAdapter);
+
+//
+//                        try {
+//                            JSONArray jsonArray =  new JSONArray(response);
+//                            parseArray(jsonArray);
+//
+//                        }catch (JSONException e){
+//                            e.printStackTrace();
+//                        }
                     }
             }
         }, new Response.ErrorListener() {
