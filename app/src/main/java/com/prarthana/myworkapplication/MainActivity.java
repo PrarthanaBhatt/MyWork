@@ -74,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void callNine(View view) {
         Toast.makeText(this, "Room...", Toast.LENGTH_SHORT).show();
-//        Intent intent = new Intent(MainActivity.this, RoomOrmMainActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, RoomOrmMainActivity.class);
+        startActivity(intent);
     }
 
     public void callTen(View view) {

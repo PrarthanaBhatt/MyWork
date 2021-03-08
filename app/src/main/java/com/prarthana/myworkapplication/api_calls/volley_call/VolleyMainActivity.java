@@ -59,7 +59,7 @@ public class VolleyMainActivity extends AppCompatActivity {
             public void onResponse(String response) {
                     if(response != null){
                         dialog.dismiss();
-                        //TODO: change by using gson
+                        // change by using gson
 
                         Gson gson = new Gson();
                         ArrayList<ModelVolley> modelVolley = gson.fromJson(response,  new TypeToken<ArrayList<ModelVolley>>(){}.getType());

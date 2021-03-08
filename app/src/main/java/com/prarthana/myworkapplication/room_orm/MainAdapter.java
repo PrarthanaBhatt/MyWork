@@ -5,6 +5,9 @@ import android.app.Dialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -48,6 +51,41 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
             Dialog dialog = new Dialog(context);
             dialog.setContentView(R.layout.dialog_update);
+
+            int width = WindowManager.LayoutParams.MATCH_PARENT;
+            int height = WindowManager.LayoutParams.WRAP_CONTENT;
+
+            dialog.getWindow().setLayout(width,height);
+            dialog.show();
+
+            EditText editText = dialog.findViewById(R.id.edit_text);
+            Button btUpdate = dialog.findViewById(R.id.bt_update);
+
+            editText.setText(sText);
+
+            btUpdate.setOnClickListener(v1 -> {
+                dialog.dismiss();
+                String uText = editText.getText().toString().trim();
+                database.mainDao().update(sID,uText);
+                dataList.clear();
+                dataList.addAll(database.mainDao().getAll());
+                notifyDataSetChanged();
+            });
+
+
+        });
+
+        holder.btDelete.setOnClickListener(v -> {
+            //Initialize main data
+            MainData d = dataList.get(holder.getAdapterPosition());
+            //Delete text from database
+            database.mainDao().delete(d);
+            //Notify when data is deleted
+            int position1 = holder.getAdapterPosition();
+            dataList.remove(position1);
+            notifyItemRemoved(position1);
+            notifyItemRangeChanged(position1,dataList.size());
+
         });
     }
 
