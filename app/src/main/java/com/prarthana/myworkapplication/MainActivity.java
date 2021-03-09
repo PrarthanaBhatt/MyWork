@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void callEight(View view) {
         Toast.makeText(this, "DataBinding...", Toast.LENGTH_SHORT).show();
-//        Intent intent = new Intent(MainActivity.this, DataBindingRecyclerMainActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, DataBindingRecyclerMainActivity.class);
+        startActivity(intent);
     }
 
     public void callNine(View view) {

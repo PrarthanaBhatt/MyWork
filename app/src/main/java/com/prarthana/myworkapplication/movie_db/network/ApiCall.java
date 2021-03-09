@@ -1,5 +1,6 @@
 package com.prarthana.myworkapplication.movie_db.network;
 
+import com.prarthana.myworkapplication.movie_db.MovieDetailModel;
 import com.prarthana.myworkapplication.movie_db.MovieModel;
 
 import retrofit2.Call;
@@ -10,8 +11,14 @@ import retrofit2.http.Query;
 
 public interface ApiCall {
 
-    @GET("popular")
+    @GET("movie/popular")
     Call<MovieModel> movieModel(@Query("api_key") String strApiKey);
+
+    @GET("movie")
+    Call<MovieDetailModel> movieDetailModel(@Query("id" ) String id,
+                                            @Query("api_key") String apikey);
+
+
 
 
 

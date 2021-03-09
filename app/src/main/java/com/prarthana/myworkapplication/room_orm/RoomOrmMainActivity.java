@@ -84,30 +84,6 @@ public class RoomOrmMainActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
         });
-//
-//        linearLayoutManager = new LinearLayoutManager(this);
-//        recyclerView.setLayoutManager(linearLayoutManager);
-//
-//        adapter = new MainAdapter(RoomOrmMainActivity.this,dataList);
-//        recyclerView.setAdapter(adapter);
-//
-//        add.setOnClickListener(v -> {
-//            String sText = editText.getText().toString().trim();
-//            if(!sText.equals("")){
-//                MainData data = new MainData();
-//                data.setText(sText);
-//                database.mainDAO().insert(data);
-//                editText.setText("");
-//                dataList.addAll(database.mainDAO().getAll());
-//                adapter.notifyDataSetChanged();
-//            }
-//        });
-//
-//        btnReset.setOnClickListener(v -> {
-//                database.mainDAO().reset(dataList);
-//                dataList.clear();
-//                dataList.addAll(database.mainDAO().getAll());
-//                adapter.notifyDataSetChanged();
-//        });
+
     }
 }
