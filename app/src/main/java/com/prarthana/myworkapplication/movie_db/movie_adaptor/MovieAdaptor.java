@@ -1,14 +1,17 @@
 package com.prarthana.myworkapplication.movie_db.movie_adaptor;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.prarthana.myworkapplication.R;
+import com.prarthana.myworkapplication.movie_db.MovieDetailsActivity;
 import com.prarthana.myworkapplication.movie_db.MovieModel;
 import com.prarthana.myworkapplication.movie_db.ResultsItem;
 
@@ -19,6 +22,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MovieAdaptor extends RecyclerView.Adapter<MovieAdaptor.MyViewHolder>{
+    ImageView imgMovie;
+    int movieId;
     private Context mContext;
     private ArrayList<ResultsItem> myMovieList;
 
@@ -39,15 +44,23 @@ public class MovieAdaptor extends RecyclerView.Adapter<MovieAdaptor.MyViewHolder
     @Override
     public void onBindViewHolder(@NonNull MovieAdaptor.MyViewHolder holder, int position) {
 
-        final ResultsItem movieModel = myMovieList.get(position);
+         ResultsItem movieModel = myMovieList.get(position);
 
         holder.movieTitle.setText(myMovieList.get(position).getTitle());
-
+//        holder.movieID.setText(myMovieList.get(position).getId());
 
         //Adding Glide library to display the images
         Glide.with(mContext)
                 .load("https://image.tmdb.org/t/p/w342"+myMovieList.get(position).getPosterPath())
                 .into(holder.imgMovie);
+
+
+        holder.imgMovie.setOnClickListener(v -> {
+            movieId = myMovieList.get(position).getId();
+            Intent intent = new Intent(mContext, MovieDetailsActivity.class);
+            intent.putExtra("MOVIE_ID",movieId);
+            mContext.startActivities(new Intent[]{intent});
+        });
 
 
     }
@@ -61,11 +74,13 @@ public class MovieAdaptor extends RecyclerView.Adapter<MovieAdaptor.MyViewHolder
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView movieTitle;
         ImageView imgMovie;
+        TextView movieID;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             movieTitle = itemView.findViewById(R.id.movieTitle);
             imgMovie = itemView.findViewById(R.id.imgMovie);
+
         }
     }
 }

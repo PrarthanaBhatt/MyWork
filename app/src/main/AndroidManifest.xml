@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWorkApplication">
-        <activity android:name=".movie_db.MovieMainActivity"></activity>
+        <activity android:name=".movie_db.MovieDetailsActivity"></activity>
+        <activity android:name=".movie_db.MovieMainActivity" />
         <activity android:name=".room_orm.RoomOrmMainActivity" />
         <activity android:name=".data_binding_recycler.DataBindingRecyclerMainActivity" />
         <activity android:name=".api_calls.HttpUrlConnection_call.HttpUrlConnectionMainActivity" />

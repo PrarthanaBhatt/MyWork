@@ -1,6 +1,7 @@
 package com.prarthana.myworkapplication.movie_db;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import retrofit2.Call;
@@ -35,11 +36,12 @@ public class MovieMainActivity extends AppCompatActivity {
         recyclerMovie = findViewById(R.id.recyclerMovie);
 
         ApiCall apiCall=RetrofitClient.getInstance().getApi();
+
         apiCall.movieModel("e1eb9d73afc601612fb492d7f0e060aa").enqueue(new Callback<MovieModel>() {
             @Override
             public void onResponse(Call<MovieModel> call, Response<MovieModel> response) {
                 Toast.makeText(MovieMainActivity.this, response.body().getResults().get(0).getTitle().toString(), Toast.LENGTH_SHORT).show();
-                recyclerMovie.setLayoutManager(new LinearLayoutManager(MovieMainActivity.this,recyclerMovie.VERTICAL,false));
+                recyclerMovie.setLayoutManager(new GridLayoutManager(MovieMainActivity.this,3,recyclerMovie.VERTICAL,false));
                 recyclerMovie.setAdapter(new MovieAdaptor(MovieMainActivity.this,new ArrayList<ResultsItem>(response.body().getResults())));
 
             }
@@ -49,5 +51,6 @@ public class MovieMainActivity extends AppCompatActivity {
                 Toast.makeText(MovieMainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }
