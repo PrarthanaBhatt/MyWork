@@ -8,6 +8,7 @@ import retrofit2.Response;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.prarthana.myworkapplication.R;
@@ -38,6 +39,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<MovieDetailModel> call, Response<MovieDetailModel> response) {
+                Log.i("Movie",response.toString());
                 Toast.makeText(MovieDetailsActivity.this, response.body().toString(), Toast.LENGTH_SHORT).show();
 
             }
