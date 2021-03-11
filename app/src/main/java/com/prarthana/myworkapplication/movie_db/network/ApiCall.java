@@ -15,8 +15,8 @@ public interface ApiCall {
     Call<MovieModel> movieModel(@Query("api_key") String strApiKey);
 
     @GET("movie")
-    Call<MovieDetailModel> movieDetailModel(@Query("id" ) String id,
-                                            @Query("api_key") String apikey);
+    Call<MovieDetailModel> movieDetailModel(@Query("id" ) String stringId,
+                                            @Query("api_key") String apiKey);
 
 
 

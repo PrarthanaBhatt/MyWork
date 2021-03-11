@@ -23,11 +23,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MovieMainActivity extends AppCompatActivity {
-//https://api.themoviedb.org/3/movie/popular?api_key=e1eb9d73afc601612fb492d7f0e060aa&language=en-US&page=1
 
+
+    private ApiCall apiInterface;
     RecyclerView recyclerMovie;
     ArrayList<MovieModel> myMovieList;
 
+    private ApiCall apiCall;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +37,10 @@ public class MovieMainActivity extends AppCompatActivity {
 
         recyclerMovie = findViewById(R.id.recyclerMovie);
 
-        ApiCall apiCall=RetrofitClient.getInstance().getApi();
+        apiCall = RetrofitClient.getClient().create(ApiCall.class);
 
         apiCall.movieModel("e1eb9d73afc601612fb492d7f0e060aa").enqueue(new Callback<MovieModel>() {
+
             @Override
             public void onResponse(Call<MovieModel> call, Response<MovieModel> response) {
                 Toast.makeText(MovieMainActivity.this, response.body().getResults().get(0).getTitle().toString(), Toast.LENGTH_SHORT).show();
@@ -49,8 +52,26 @@ public class MovieMainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<MovieModel> call, Throwable t) {
                 Toast.makeText(MovieMainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+
             }
         });
+
+//        ApiCall apiCall=RetrofitClient.getInstance().getApi();
+
+//        apiInterface.movieModel("e1eb9d73afc601612fb492d7f0e060aa").enqueue(new Callback<MovieModel>() {
+//            @Override
+//            public void onResponse(Call<MovieModel> call, Response<MovieModel> response) {
+//                Toast.makeText(MovieMainActivity.this, response.body().getResults().get(0).getTitle().toString(), Toast.LENGTH_SHORT).show();
+//                recyclerMovie.setLayoutManager(new GridLayoutManager(MovieMainActivity.this,3,recyclerMovie.VERTICAL,false));
+//                recyclerMovie.setAdapter(new MovieAdaptor(MovieMainActivity.this,new ArrayList<ResultsItem>(response.body().getResults())));
+
+//            }
+//
+//            @Override
+//            public void onFailure(Call<MovieModel> call, Throwable t) {
+//                Toast.makeText(MovieMainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
     }
 }
