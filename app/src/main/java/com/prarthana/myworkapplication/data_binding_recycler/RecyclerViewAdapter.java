@@ -30,8 +30,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.binding.textTitle.setText(list.get(position).getTitle());
-        holder.binding.textAuthor.setText(list.get(position).getAuthor());
+        holder.binding.setData(list.get(position));
+//        holder.binding.textTitle.setText(list.get(position).getTitle());
+//        holder.binding.textAuthor.setText(list.get(position).getAuthor());
 //        holder.binding.imgBookCover.setImageDrawable(list.get(position).getImage());
     }
 
@@ -45,6 +46,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
       private DatabindingRecyclerViewItemBinding binding;
       public ViewHolder(@NonNull DatabindingRecyclerViewItemBinding binding) {
           super(binding.getRoot());
+          this.binding = binding;
       }
   }
 }

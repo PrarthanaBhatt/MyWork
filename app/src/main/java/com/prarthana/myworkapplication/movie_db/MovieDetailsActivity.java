@@ -19,6 +19,8 @@ import java.util.ArrayList;
 
 public class MovieDetailsActivity extends AppCompatActivity {
 
+    private ApiCall apiCall;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,21 +29,24 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         int id = getIntent().getIntExtra("MOVIE_ID", 0);
         Toast.makeText(this, "Get Movie Id"+id, Toast.LENGTH_SHORT).show();
+        String stringId = String.valueOf(id);
+        Toast.makeText(this, "String movie id:"+stringId, Toast.LENGTH_SHORT).show();
 
+        apiCall = RetrofitClient.getClient().create(ApiCall.class);
 
-//        ApiCall apiCall= RetrofitClient.getInstance().getApi();
-//        apiCall.movieDetailModel("id","e1eb9d73afc601612fb492d7f0e060aa").enqueue(new Callback<MovieDetailModel>(){
-//
-//            @Override
-//            public void onResponse(Call<MovieDetailModel> call, Response<MovieDetailModel> response) {
-//                Toast.makeText(MovieDetailsActivity.this, response.body().toString(), Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onFailure(Call<MovieDetailModel> call, Throwable t) {
-//                Toast.makeText(MovieDetailsActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
+        apiCall.movieDetailModel(stringId,"e1eb9d73afc601612fb492d7f0e060aa").enqueue(new Callback<MovieDetailModel>() {
+
+            @Override
+            public void onResponse(Call<MovieDetailModel> call, Response<MovieDetailModel> response) {
+                Toast.makeText(MovieDetailsActivity.this, response.body().toString(), Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onFailure(Call<MovieDetailModel> call, Throwable t) {
+                Toast.makeText(MovieDetailsActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

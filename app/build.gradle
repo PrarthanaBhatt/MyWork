@@ -88,4 +88,7 @@ dependencies {
     testImplementation "androidx.room:room-testing:$room_version"
 
     implementation 'com.android.support:multidex:1.0.3'
+
+    //http logging inspector
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
 }
