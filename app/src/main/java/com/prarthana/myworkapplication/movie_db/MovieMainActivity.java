@@ -55,23 +55,5 @@ public class MovieMainActivity extends AppCompatActivity {
 
             }
         });
-
-//        ApiCall apiCall=RetrofitClient.getInstance().getApi();
-
-//        apiInterface.movieModel("e1eb9d73afc601612fb492d7f0e060aa").enqueue(new Callback<MovieModel>() {
-//            @Override
-//            public void onResponse(Call<MovieModel> call, Response<MovieModel> response) {
-//                Toast.makeText(MovieMainActivity.this, response.body().getResults().get(0).getTitle().toString(), Toast.LENGTH_SHORT).show();
-//                recyclerMovie.setLayoutManager(new GridLayoutManager(MovieMainActivity.this,3,recyclerMovie.VERTICAL,false));
-//                recyclerMovie.setAdapter(new MovieAdaptor(MovieMainActivity.this,new ArrayList<ResultsItem>(response.body().getResults())));
-
-//            }
-//
-//            @Override
-//            public void onFailure(Call<MovieModel> call, Throwable t) {
-//                Toast.makeText(MovieMainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
     }
 }
