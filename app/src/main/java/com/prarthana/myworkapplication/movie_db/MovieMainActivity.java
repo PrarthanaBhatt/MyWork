@@ -33,7 +33,7 @@ public class MovieMainActivity extends AppCompatActivity {
 
         recyclerMovie = findViewById(R.id.recyclerMovie);
 
-        apiCall = RetrofitClient.getClient().create(ApiCall.class);
+        apiCall = RetrofitClient.getClient(MovieMainActivity.this).create(ApiCall.class);
 
         apiCall.movieModel("e1eb9d73afc601612fb492d7f0e060aa").enqueue(new Callback<MovieModel>() {
 

@@ -27,7 +27,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
     private ApiCall apiCall;
     ImageView poster_path;
-    TextView rating,original_title,overview,tagline,release_date,runtime,homepage;
+    TextView rating, original_title, overview, tagline, release_date, runtime, homepage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,22 +46,20 @@ public class MovieDetailsActivity extends AppCompatActivity {
         String stringId = String.valueOf(id);
 //        Toast.makeText(this, "String movie id:"+stringId, Toast.LENGTH_SHORT).show();
 
-        apiCall = RetrofitClient.getClient().create(ApiCall.class);
+        apiCall = RetrofitClient.getClient(MovieDetailsActivity.this).create(ApiCall.class);
 
-        apiCall.movieDetailModel(stringId,"e1eb9d73afc601612fb492d7f0e060aa").enqueue(new Callback<MovieDetailModel>() {
+        apiCall.movieDetailModel(stringId, "e1eb9d73afc601612fb492d7f0e060aa").enqueue(new Callback<MovieDetailModel>() {
 
             @Override
             public void onResponse(Call<MovieDetailModel> call, Response<MovieDetailModel> response) {
-                Log.i("Movie",response.toString());
-                Toast.makeText(MovieDetailsActivity.this, response.body().toString(), Toast.LENGTH_SHORT).show();
-//                String strGetPosterPath =  response.body().getPosterPath();
-//
+                Log.i("Movie", response.toString());
+//                Toast.makeText(MovieDetailsActivity.this, response.body().toString(), Toast.LENGTH_SHORT).show();
+
                 Glide.with(getApplicationContext())
-                        .load("https://image.tmdb.org/t/p/w342"+response.body().getBackdropPath())
+                        .load("https://image.tmdb.org/t/p/w342" + response.body().getBackdropPath())
                         .into(poster_path);
 
 //                poster_path.setImageURI(Uri.parse(strGetPosterPath));
-
 //                rating.setText(response.body().getReleaseDate());
                 original_title.setText(response.body().getOriginalTitle());
                 overview.setText(response.body().getOverview());

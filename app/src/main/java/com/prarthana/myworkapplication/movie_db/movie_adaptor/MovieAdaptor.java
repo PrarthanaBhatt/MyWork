@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.prarthana.myworkapplication.R;
 import com.prarthana.myworkapplication.movie_db.MovieDetailsActivity;
 import com.prarthana.myworkapplication.movie_db.MovieModel;
@@ -52,7 +53,12 @@ public class MovieAdaptor extends RecyclerView.Adapter<MovieAdaptor.MyViewHolder
         //Adding Glide library to display the images
         Glide.with(mContext)
                 .load("https://image.tmdb.org/t/p/w342"+myMovieList.get(position).getPosterPath())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.imgMovie);
+//        Glide.with(mContext)
+//                .load("https://image.tmdb.org/t/p/w342"+myMovieList.get(position).getPosterPath())
+//
+//                .into(holder.imgMovie);
 
 
         holder.imgMovie.setOnClickListener(v -> {
