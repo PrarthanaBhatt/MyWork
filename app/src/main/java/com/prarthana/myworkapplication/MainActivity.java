@@ -12,10 +12,11 @@ import com.prarthana.myworkapplication.activity_lifecycle.LifecycleMainActivity;
 import com.prarthana.myworkapplication.api_calls.ApiCallMainActivity;
 import com.prarthana.myworkapplication.architecture.ArchitectureMainActivity;
 import com.prarthana.myworkapplication.components.ComponentsMainActivity;
-import com.prarthana.myworkapplication.data_Activity.DataMainActivity;
+import com.prarthana.myworkapplication.data_binding.BindMainActivity;
 import com.prarthana.myworkapplication.data_binding_recycler.DataBindingRecyclerMainActivity;
 import com.prarthana.myworkapplication.data_persistence.DataPersistenceMainActivity;
 import com.prarthana.myworkapplication.layout.LayoutMainActivity;
+import com.prarthana.myworkapplication.location_map.MapsActivity;
 import com.prarthana.myworkapplication.movie_db.MovieMainActivity;
 import com.prarthana.myworkapplication.room_orm.RoomOrmMainActivity;
 
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void callFive(View view) {
-        Intent intent = new Intent(MainActivity.this, DataMainActivity.class);
+        Intent intent = new Intent(MainActivity.this, BindMainActivity.class);
         startActivity(intent);
     }
 
@@ -81,5 +82,11 @@ public class MainActivity extends AppCompatActivity {
     public void callTen(View view) {
         Intent intent = new Intent(MainActivity.this, MovieMainActivity.class);
         startActivity(intent);
+    }
+
+    public void callEleven(View view) {
+        Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+        startActivity(intent);
+
     }
 }

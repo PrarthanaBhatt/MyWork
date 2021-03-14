@@ -7,6 +7,7 @@ import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiCall {
@@ -14,9 +15,10 @@ public interface ApiCall {
     @GET("movie/popular")
     Call<MovieModel> movieModel(@Query("api_key") String strApiKey);
 
-    @GET("movie")
-    Call<MovieDetailModel> movieDetailModel(@Query("id" ) String stringId,
+    @GET("movie/{id}")
+    Call<MovieDetailModel> movieDetailModel(@Path("id") String stringId,
                                             @Query("api_key") String apiKey);
+
 
 
 

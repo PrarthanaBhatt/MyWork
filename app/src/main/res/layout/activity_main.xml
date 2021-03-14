@@ -4,120 +4,144 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="35dp"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnOne"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:backgroundTint="@null"
-        android:background="@drawable/green_button_bg"
-        android:text="@string/layouts"
-        android:textAllCaps="false"
-        android:onClick="callOne"/>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btnTwo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:backgroundTint="@null"
-        android:background="@drawable/green_button_bg"
-        android:text="@string/components"
-        android:textAllCaps="false"
-        android:onClick="callTwo"/>
-
-    <Button
-        android:id="@+id/btnThree"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:backgroundTint="@null"
-        android:background="@drawable/green_button_bg"
-        android:text="@string/activity_lifecycle"
-        android:textAllCaps="false"
-        android:onClick="callThree"/>
-
-    <Button
-        android:id="@+id/btnFour"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:backgroundTint="@null"
-        android:background="@drawable/green_button_bg"
-        android:text="@string/data_persistence"
-        android:textAllCaps="false"
-        android:onClick="callFour"/>
-
-    <Button
-        android:id="@+id/btnFive"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:backgroundTint="@null"
-        android:background="@drawable/green_button_bg"
-        android:text="@string/data_binding"
-        android:textAllCaps="false"
-        android:onClick="callFive"/>
-
-    <Button
-        android:id="@+id/btnSix"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:backgroundTint="@null"
-        android:background="@drawable/green_button_bg"
-        android:text="@string/api_call"
-        android:textAllCaps="false"
-        android:onClick="callSix"/>
-
-    <Button
-        android:id="@+id/btnSeven"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:backgroundTint="@null"
-        android:background="@drawable/green_button_bg"
-        android:text="@string/architecture"
-        android:textAllCaps="false"
-        android:onClick="callSeven"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="35dp"
+            android:orientation="vertical">
 
 
-    <Button
-        android:id="@+id/btnEight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:backgroundTint="@null"
-        android:background="@drawable/green_button_bg"
-        android:text="@string/retrofit_recycle_viewbinding"
-        android:textAllCaps="false"
-        android:onClick="callEight"/>
+            <Button
+                android:id="@+id/btnOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/green_button_bg"
+                android:onClick="callOne"
+                android:text="@string/layouts"
+                android:textAllCaps="false"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/green_button_bg"
+                android:onClick="callTwo"
+                android:text="@string/components"
+                android:textAllCaps="false"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/green_button_bg"
+                android:onClick="callThree"
+                android:text="@string/activity_lifecycle"
+                android:textAllCaps="false"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnFour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/green_button_bg"
+                android:onClick="callFour"
+                android:text="@string/data_persistence"
+                android:textAllCaps="false"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnFive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/green_button_bg"
+                android:onClick="callFive"
+                android:text="@string/data_binding"
+                android:textAllCaps="false"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnSix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/green_button_bg"
+                android:onClick="callSix"
+                android:text="@string/api_call"
+                android:textAllCaps="false"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnSeven"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/green_button_bg"
+                android:onClick="callSeven"
+                android:text="@string/architecture"
+                android:textAllCaps="false"
+                app:backgroundTint="@null" />
 
 
-    <Button
-        android:id="@+id/btnNine"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:backgroundTint="@null"
-        android:background="@drawable/green_button_bg"
-        android:text="@string/room"
-        android:textAllCaps="false"
-        android:onClick="callNine"/>
+            <Button
+                android:id="@+id/btnEight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/green_button_bg"
+                android:onClick="callEight"
+                android:text="@string/retrofit_recycle_viewbinding"
+                android:textAllCaps="false"
+                app:backgroundTint="@null" />
 
 
-    <Button
-        android:id="@+id/btnTen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:backgroundTint="@null"
-        android:background="@drawable/green_button_bg"
-        android:text="Movie"
-        android:textAllCaps="false"
-        android:onClick="callTen"/>
+            <Button
+                android:id="@+id/btnNine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/green_button_bg"
+                android:onClick="callNine"
+                android:text="@string/room"
+                android:textAllCaps="false"
+                app:backgroundTint="@null" />
+
+
+            <Button
+                android:id="@+id/btnTen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/green_button_bg"
+                android:onClick="callTen"
+                android:text="Movie"
+                android:textAllCaps="false"
+                app:backgroundTint="@null" />
+
+
+            <Button
+                android:id="@+id/btnEleven"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/green_button_bg"
+                android:onClick="callEleven"
+                android:text="@string/location_map"
+                android:textAllCaps="false"
+                app:backgroundTint="@null" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

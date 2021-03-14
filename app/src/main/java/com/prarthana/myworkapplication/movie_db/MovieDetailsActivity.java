@@ -7,10 +7,15 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.prarthana.myworkapplication.R;
 import com.prarthana.myworkapplication.movie_db.movie_adaptor.MovieAdaptor;
 import com.prarthana.myworkapplication.movie_db.network.ApiCall;
@@ -21,17 +26,24 @@ import java.util.ArrayList;
 public class MovieDetailsActivity extends AppCompatActivity {
 
     private ApiCall apiCall;
-
+    ImageView poster_path;
+    TextView rating,original_title,overview,tagline,release_date,runtime,homepage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
 
+        poster_path = findViewById(R.id.poster_path);
+        original_title = findViewById(R.id.originalTitle);
+        overview = findViewById(R.id.overview);
+        tagline = findViewById(R.id.tagline);
+        release_date = findViewById(R.id.release_date);
+        homepage = findViewById(R.id.homepage);
 
         int id = getIntent().getIntExtra("MOVIE_ID", 0);
-        Toast.makeText(this, "Get Movie Id"+id, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Get Movie Id"+id, Toast.LENGTH_SHORT).show();
         String stringId = String.valueOf(id);
-        Toast.makeText(this, "String movie id:"+stringId, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "String movie id:"+stringId, Toast.LENGTH_SHORT).show();
 
         apiCall = RetrofitClient.getClient().create(ApiCall.class);
 
@@ -41,6 +53,21 @@ public class MovieDetailsActivity extends AppCompatActivity {
             public void onResponse(Call<MovieDetailModel> call, Response<MovieDetailModel> response) {
                 Log.i("Movie",response.toString());
                 Toast.makeText(MovieDetailsActivity.this, response.body().toString(), Toast.LENGTH_SHORT).show();
+//                String strGetPosterPath =  response.body().getPosterPath();
+//
+                Glide.with(getApplicationContext())
+                        .load("https://image.tmdb.org/t/p/w342"+response.body().getBackdropPath())
+                        .into(poster_path);
+
+//                poster_path.setImageURI(Uri.parse(strGetPosterPath));
+
+//                rating.setText(response.body().getReleaseDate());
+                original_title.setText(response.body().getOriginalTitle());
+                overview.setText(response.body().getOverview());
+                tagline.setText(response.body().getTagline());
+                homepage.setText(response.body().getHomepage());
+                release_date.setText(response.body().getReleaseDate());
+
 
             }
 

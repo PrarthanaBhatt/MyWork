@@ -1,26 +1,22 @@
 package com.prarthana.myworkapplication.movie_db;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.prarthana.myworkapplication.R;
-import com.prarthana.myworkapplication.api_calls.retrofit_call.Movie;
-import com.prarthana.myworkapplication.api_calls.retrofit_call.RetrofitAdapter;
 import com.prarthana.myworkapplication.movie_db.movie_adaptor.MovieAdaptor;
 import com.prarthana.myworkapplication.movie_db.network.ApiCall;
 import com.prarthana.myworkapplication.movie_db.network.RetrofitClient;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MovieMainActivity extends AppCompatActivity {
 

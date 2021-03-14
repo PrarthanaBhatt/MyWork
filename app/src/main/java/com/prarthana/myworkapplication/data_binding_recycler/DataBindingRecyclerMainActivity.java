@@ -38,7 +38,7 @@ public class DataBindingRecyclerMainActivity extends AppCompatActivity {
 
 
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(bookList);
-        binding.recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        binding.recyclerView.setLayoutManager(new GridLayoutManager(this,3));
         binding.recyclerView.setAdapter(adapter);
 
     }
