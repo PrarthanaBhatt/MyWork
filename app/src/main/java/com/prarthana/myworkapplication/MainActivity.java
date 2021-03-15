@@ -58,13 +58,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void callFive(View view) {
-        Intent intent = new Intent(MainActivity.this, BindMainActivity.class);
-        startActivity(intent);
+        Toast.makeText(this, "DataBinding ", Toast.LENGTH_SHORT).show();
+//        Intent intent = new Intent(MainActivity.this, BindMainActivity.class);
+//        startActivity(intent);
     }
 
     public void callSeven(View view) {
-        Intent intent = new Intent(MainActivity.this, ArchitectureMainActivity.class);
-        startActivity(intent);
+        Toast.makeText(this, "Architecture..", Toast.LENGTH_SHORT).show();
+//        Intent intent = new Intent(MainActivity.this, ArchitectureMainActivity.class);
+//        startActivity(intent);
     }
 
     public void callEight(View view) {

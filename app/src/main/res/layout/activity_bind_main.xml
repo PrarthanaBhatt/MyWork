@@ -1,9 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.prarthana.myworkapplication.data_binding.User" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".data_binding.BindMainActivity">
+    tools:context=".data_binding.BindMainActivity"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User Name"
+        app:validationLimit="@{5}"
+        android:text="@={user.userName}" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Email"
+        app:validationLimit="@{10}"
+        android:text="@={user.email}" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Gender" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkedButton="@={user.selectedRadioButton}"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked='@{"Male".equalsIgnoreCase(user.gender)}'
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/rbFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked='@{"Female".equalsIgnoreCase(user.gender)}'
+            android:text="Female" />
+    </RadioGroup>
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Languages" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cbMarathi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked='@{user.language.contains("Marathi")}'
+            android:onClick="@{()->user.setLanguage(cbMarathi)}"
+            android:text="Marathi" />
+
+        <CheckBox
+            android:id="@+id/cbHindi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked='@{user.language.contains("Hindi")}'
+            android:onClick="@{()->user.setLanguage(cbHindi)}"
+            android:text="Hindi" />
+
+        <CheckBox
+            android:id="@+id/cbEnglish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked='@{user.language.contains("English")}'
+            android:onClick="@{()->user.setLanguage(cbEnglish)}"
+            android:text="English" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="City" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spnCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:selectedValue="@={user.city}"/>
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Add" />
+
+</LinearLayout>
+    </layout>
