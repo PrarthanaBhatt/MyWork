@@ -75,4 +75,14 @@
     <string name="location_map">Location Map</string>
     <string name="title_activity_maps">Map</string>
 
+    <string name="buttonText">Display Next Course</string>
+    <string name="heading">MVP Architecture Pattern</string>
+    <string name="subHeading">Computer Science Online Courses</string>
+    <string name="description">Course Description</string>
+
+    <string name="email_hint">Enter your Email ID</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="button_text">Login</string>
+    <string name="mvvm_architecture_pattern">MVVM Architecture Pattern</string>
+
 </resources>

@@ -12,7 +12,6 @@ import com.prarthana.myworkapplication.activity_lifecycle.LifecycleMainActivity;
 import com.prarthana.myworkapplication.api_calls.ApiCallMainActivity;
 import com.prarthana.myworkapplication.architecture.ArchitectureMainActivity;
 import com.prarthana.myworkapplication.components.ComponentsMainActivity;
-import com.prarthana.myworkapplication.data_binding.BindMainActivity;
 import com.prarthana.myworkapplication.data_binding_recycler.DataBindingRecyclerMainActivity;
 import com.prarthana.myworkapplication.data_persistence.DataPersistenceMainActivity;
 import com.prarthana.myworkapplication.layout.LayoutMainActivity;
@@ -65,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void callSeven(View view) {
         Toast.makeText(this, "Architecture..", Toast.LENGTH_SHORT).show();
-//        Intent intent = new Intent(MainActivity.this, ArchitectureMainActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, ArchitectureMainActivity.class);
+        startActivity(intent);
     }
 
     public void callEight(View view) {

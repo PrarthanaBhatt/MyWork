@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.prarthana.myworkapplication.R;
-import com.prarthana.myworkapplication.architecture.mvc_architecture.MvcMainActivity;
+
 import com.prarthana.myworkapplication.architecture.mvp_architecture.MvpMainActivity;
 import com.prarthana.myworkapplication.architecture.mvvm_architecture.MvvmMainActivity;
 
@@ -21,10 +21,6 @@ public class ArchitectureMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_arcitecture_main);
     }
 
-    public void callMVC(View view) {
-        Intent intent = new Intent(ArchitectureMainActivity.this, MvcMainActivity.class);
-        startActivity(intent);
-    }
 
     public void callMVP(View view) {
         Intent intent = new Intent(ArchitectureMainActivity.this, MvpMainActivity.class);
@@ -32,7 +28,8 @@ public class ArchitectureMainActivity extends AppCompatActivity {
     }
 
     public void callMVVM(View view) {
-        Intent intent = new Intent(ArchitectureMainActivity.this, MvvmMainActivity.class);
-        startActivity(intent);
+        Toast.makeText(this, "MVVM", Toast.LENGTH_SHORT).show();
+//        Intent intent = new Intent(ArchitectureMainActivity.this, MvvmMainActivity.class);
+//        startActivity(intent);
     }
 }
